@@ -1,13 +1,10 @@
 package main;
 
-import java.awt.Component;
 import java.awt.Image;
 import java.io.File;
-import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
@@ -190,17 +187,32 @@ public class UserRegistration extends javax.swing.JFrame {
 
         int result = fileChooser.showOpenDialog(this);
 
-        if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
+            if (result == JFileChooser.APPROVE_OPTION) {
+                if (!isValidImageFormat(selectedFile)) {
+                    JOptionPane.showMessageDialog(this, "Please select a valid image file (jpg, png, jpeg, gif).", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
             photoFilePath = selectedFile.getAbsolutePath();
-            ((AbstractButton) SwingUtilities.getRoot((Component) fileChooser))
-                .setText("Uploaded: " + photoFilePath);
+            
+            JOptionPane.showMessageDialog(this, "Photo uploaded successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_uploadBtnActionPerformed
 
     private boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return email.matches(emailRegex);
+    }
+    
+    private boolean isValidImageFormat(File file) {
+        String fileName = file.getName();
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex == -1) {
+            return false;
+        }
+
+        String fileExtension = fileName.substring(dotIndex + 1).toLowerCase();
+        return fileExtension.equals("jpg") || fileExtension.equals("png") || fileExtension.equals("jpeg") || fileExtension.equals("gif");
     }
     
     public static void main(String args[]) {
