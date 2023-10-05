@@ -73,7 +73,7 @@ public class UserRegistration extends javax.swing.JFrame {
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
-        msgLabel.setText("Message");
+        msgLabel.setText("Message(<=160 characters)");
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -182,6 +182,11 @@ public class UserRegistration extends javax.swing.JFrame {
         
         if (!isValidEmail(email)) {
             JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (textBoxMsg.length() > 160) {
+            JOptionPane.showMessageDialog(this, "Message should not exceed 160 characters.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
