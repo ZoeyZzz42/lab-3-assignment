@@ -148,9 +148,20 @@ public class UserRegistration extends javax.swing.JFrame {
         String email = emailTxtField.getText();
         
         if (firstName.isEmpty() || lastName.isEmpty() || age.isEmpty() || email.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        int ageInt;
+        try {
+            ageInt = Integer.parseInt(age);
+            if (ageInt < 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid age (a positive integer).", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         String message = "First Name: " + firstName + "\n" +
             "Last Name: " + lastName + "\n" +
