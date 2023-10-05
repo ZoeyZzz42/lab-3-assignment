@@ -1,29 +1,14 @@
 package main;
 
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
 /**
  *
  * @author zoey42
  */
 public class UserRegistration extends javax.swing.JFrame {
-//    private JTextField firstNameField;
-//    private JTextField lastNameField;
-//    private JTextField ageField;
-//    private JTextField emailField;
-//    private JButton registerButton;
-    
+
     public UserRegistration() {
-        initComponents();
-      
-        
+        initComponents();  
     }
 
     @SuppressWarnings("unchecked")
