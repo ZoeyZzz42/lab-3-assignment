@@ -163,6 +163,11 @@ public class UserRegistration extends javax.swing.JFrame {
             return;
         }
         
+        if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         String message = "First Name: " + firstName + "\n" +
             "Last Name: " + lastName + "\n" +
             "Age: " + age + "\n" +
@@ -171,6 +176,11 @@ public class UserRegistration extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_submitBtnActionPerformed
 
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email.matches(emailRegex);
+    }
+    
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
