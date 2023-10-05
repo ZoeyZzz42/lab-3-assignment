@@ -138,7 +138,7 @@ public class UserRegistration extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ageTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtFieldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_ageTxtFieldActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
@@ -146,6 +146,11 @@ public class UserRegistration extends javax.swing.JFrame {
         String lastName = lastNameTxtField.getText();
         String age = ageTxtField.getText();
         String email = emailTxtField.getText();
+        
+        if (firstName.isEmpty() || lastName.isEmpty() || age.isEmpty() || email.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
         
         String message = "First Name: " + firstName + "\n" +
             "Last Name: " + lastName + "\n" +
