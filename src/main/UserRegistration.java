@@ -168,6 +168,16 @@ public class UserRegistration extends javax.swing.JFrame {
             return;
         }
         
+        if (!isValidName(firstName)) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid first name.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; 
+        }
+
+        if (!isValidName(lastName)) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid last name.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; 
+        }
+        
         int ageInt;
         try {
             ageInt = Integer.parseInt(age);
@@ -237,6 +247,10 @@ public class UserRegistration extends javax.swing.JFrame {
 
         String fileExtension = fileName.substring(dotIndex + 1).toLowerCase();
         return fileExtension.equals("jpg") || fileExtension.equals("png") || fileExtension.equals("jpeg") || fileExtension.equals("gif");
+    }
+    
+    private boolean isValidName(String name) {
+        return !name.isEmpty() && name.matches("^[a-zA-Z]+$");
     }
     
     public static void main(String args[]) {
