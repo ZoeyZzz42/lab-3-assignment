@@ -1,5 +1,11 @@
 # lab-3-assignment
 
+## My commit history from terminal 
+<img width="650" alt="image" src="https://github.com/ZoeyZzz42/lab-3-assignment/assets/145056570/138490ab-d931-4360-8d31-01bb2c3b06a8">
+
+## My github configuration on my computer
+<img width="650" alt="image" src="https://github.com/ZoeyZzz42/lab-3-assignment/assets/145056570/f0beb96c-acca-44ae-a6cf-44a991296b4d">
+
 ## Successful submission with photo uploaded
 <img width="1080" alt="image" src="https://github.com/ZoeyZzz42/lab-3-assignment/assets/145056570/f69361b3-4067-4c0d-a004-123af5ab978c">
 *when there's no message written, the message line will just be blank*
