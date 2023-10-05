@@ -1,6 +1,10 @@
 package main;
 
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author zoey42
@@ -54,6 +58,11 @@ public class UserRegistration extends javax.swing.JFrame {
         photoLabel.setText("Photo");
 
         uploadBtn.setText("Upload");
+        uploadBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uploadBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -162,6 +171,20 @@ public class UserRegistration extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_submitBtnActionPerformed
+
+    private void uploadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBtnActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg", "png", "jpeg", "gif");
+        fileChooser.setFileFilter(filter);
+
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            ImageIcon photoIcon = new ImageIcon(selectedFile.getPath());
+            photoLabel.setIcon(photoIcon);
+        }
+    }//GEN-LAST:event_uploadBtnActionPerformed
 
     private boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
