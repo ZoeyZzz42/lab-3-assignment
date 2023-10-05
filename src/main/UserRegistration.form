@@ -42,7 +42,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="204" max="32767" attributes="0"/>
                   <Component id="titleLabel" min="-2" pref="417" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               </Group>
@@ -50,23 +50,25 @@
                   <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="submitBtn" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="firstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="emailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="ageLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="photoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="firstNameTxtField" alignment="0" max="32767" attributes="0"/>
                               <Component id="lastNameTxtField" alignment="0" max="32767" attributes="0"/>
                               <Component id="ageTxtField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="emailTxtField" alignment="0" pref="202" max="32767" attributes="0"/>
+                              <Component id="emailTxtField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="uploadBtn" pref="202" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="145" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,7 +99,12 @@
                       <Component id="emailLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="emailTxtField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="photoLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="uploadBtn" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="71" max="32767" attributes="0"/>
                   <Component id="submitBtn" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
@@ -138,9 +145,6 @@
         <Component class="javax.swing.JTextField" name="lastNameTxtField">
         </Component>
         <Component class="javax.swing.JTextField" name="ageTxtField">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ageTxtFieldActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="emailTxtField">
         </Component>
@@ -154,6 +158,16 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitBtnActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="photoLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Photo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="uploadBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Upload"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

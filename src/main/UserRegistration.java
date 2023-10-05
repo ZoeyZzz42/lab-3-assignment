@@ -26,6 +26,8 @@ public class UserRegistration extends javax.swing.JFrame {
         ageTxtField = new javax.swing.JTextField();
         emailTxtField = new javax.swing.JTextField();
         submitBtn = new javax.swing.JButton();
+        photoLabel = new javax.swing.JLabel();
+        uploadBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(700, 500));
@@ -41,12 +43,6 @@ public class UserRegistration extends javax.swing.JFrame {
 
         emailLabel.setText("Email");
 
-        ageTxtField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ageTxtFieldActionPerformed(evt);
-            }
-        });
-
         submitBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -55,12 +51,16 @@ public class UserRegistration extends javax.swing.JFrame {
             }
         });
 
+        photoLabel.setText("Photo");
+
+        uploadBtn.setText("Upload");
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(204, Short.MAX_VALUE)
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -72,14 +72,16 @@ public class UserRegistration extends javax.swing.JFrame {
                             .addComponent(firstNameLabel)
                             .addComponent(emailLabel)
                             .addComponent(lastNameLabel)
-                            .addComponent(ageLabel))
+                            .addComponent(ageLabel)
+                            .addComponent(photoLabel))
                         .addGap(134, 134, 134)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(firstNameTxtField)
                             .addComponent(lastNameTxtField)
                             .addComponent(ageTxtField)
-                            .addComponent(emailTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))))
-                .addContainerGap(145, Short.MAX_VALUE))
+                            .addComponent(emailTxtField)
+                            .addComponent(uploadBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +105,11 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailLabel)
                     .addComponent(emailTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(photoLabel)
+                    .addComponent(uploadBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(submitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
         );
@@ -121,10 +127,6 @@ public class UserRegistration extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ageTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxtFieldActionPerformed
-
-    }//GEN-LAST:event_ageTxtFieldActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         String firstName = firstNameTxtField.getText();
@@ -184,7 +186,9 @@ public class UserRegistration extends javax.swing.JFrame {
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField lastNameTxtField;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel photoLabel;
     private javax.swing.JButton submitBtn;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton uploadBtn;
     // End of variables declaration//GEN-END:variables
 }
