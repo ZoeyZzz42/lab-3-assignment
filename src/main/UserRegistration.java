@@ -1,5 +1,8 @@
 package main;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -13,6 +16,7 @@ public class UserRegistration extends javax.swing.JFrame {
     private JTextField lastNameField;
     private JTextField ageField;
     private JTextField emailField;
+    private JButton registerButton;
     
     public UserRegistration() {
         initComponents();
@@ -30,6 +34,15 @@ public class UserRegistration extends javax.swing.JFrame {
         lastNameField = new JTextField(20);
         ageField = new JTextField(5);
         emailField = new JTextField(20);
+        
+        registerButton = new JButton("Register");
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registerUser();
+            }
+        });
+        
     }
 
     @SuppressWarnings("unchecked")
