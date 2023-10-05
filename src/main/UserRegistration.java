@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -169,7 +170,14 @@ public class UserRegistration extends javax.swing.JFrame {
             "Age: " + age + "\n" +
             "Email: " + email;
         
-        JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE);
+        ImageIcon photoIcon = (ImageIcon) photoLabel.getIcon();
+        if (photoIcon != null) {
+            ImageIcon scaledPhoto = new ImageIcon(photoIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+            message += "\n\nPhoto:";
+            JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE, scaledPhoto);
+        } else {
+            JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_submitBtnActionPerformed
 
     private void uploadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBtnActionPerformed
