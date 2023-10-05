@@ -162,6 +162,7 @@ public class UserRegistration extends javax.swing.JFrame {
         String lastName = lastNameTxtField.getText();
         String age = ageTxtField.getText();
         String email = emailTxtField.getText();
+        String textBoxMsg = textArea.getText();
         
         if (firstName.isEmpty() || lastName.isEmpty() || age.isEmpty() || email.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -187,7 +188,8 @@ public class UserRegistration extends javax.swing.JFrame {
         String message = "First Name: " + firstName + "\n" +
             "Last Name: " + lastName + "\n" +
             "Age: " + age + "\n" +
-            "Email: " + email;
+            "Email: " + email + "\n" +
+            "Message: " + textBoxMsg;
         
         if (photoFilePath != null) {
             ImageIcon photoIcon = new ImageIcon(photoFilePath);
