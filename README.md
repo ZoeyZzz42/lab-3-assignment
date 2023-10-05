@@ -10,6 +10,9 @@
 <img width="1080" alt="image" src="https://github.com/ZoeyZzz42/lab-3-assignment/assets/145056570/f69361b3-4067-4c0d-a004-123af5ab978c">
 *when there's no message written, the message line will just be blank*
 
+## Photo upload selection pop-up
+<img width="799" alt="image" src="https://github.com/ZoeyZzz42/lab-3-assignment/assets/145056570/9a04ae83-b53b-4487-96ce-823ff76b4fde">
+
 ## Successful photo upload
 <img width="799" alt="image" src="https://github.com/ZoeyZzz42/lab-3-assignment/assets/145056570/d558d421-8216-40aa-8626-86d051d92b07">
 
