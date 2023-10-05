@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -13,11 +14,11 @@ import javax.swing.JTextField;
  * @author zoey42
  */
 public class UserRegistration extends javax.swing.JFrame {
-    private JTextField firstNameField;
-    private JTextField lastNameField;
-    private JTextField ageField;
-    private JTextField emailField;
-    private JButton registerButton;
+//    private JTextField firstNameField;
+//    private JTextField lastNameField;
+//    private JTextField ageField;
+//    private JTextField emailField;
+//    private JButton registerButton;
     
     public UserRegistration() {
         initComponents();
@@ -141,7 +142,17 @@ public class UserRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_ageTxtFieldActionPerformed
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-        // TODO add your handling code here:
+        String firstName = firstNameTxtField.getText();
+        String lastName = lastNameTxtField.getText();
+        String age = ageTxtField.getText();
+        String email = emailTxtField.getText();
+        
+        String message = "First Name: " + firstName + "\n" +
+            "Last Name: " + lastName + "\n" +
+            "Age: " + age + "\n" +
+            "Email: " + email;
+        
+        JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_submitBtnActionPerformed
 
     public static void main(String args[]) {
