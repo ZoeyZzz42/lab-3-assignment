@@ -1,16 +1,20 @@
 package main;
 
+import java.awt.Component;
 import java.awt.Image;
 import java.io.File;
+import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author zoey42
  */
 public class UserRegistration extends javax.swing.JFrame {
+    private String photoFilePath;
 
     public UserRegistration() {
         initComponents();  
@@ -170,10 +174,9 @@ public class UserRegistration extends javax.swing.JFrame {
             "Age: " + age + "\n" +
             "Email: " + email;
         
-        ImageIcon photoIcon = (ImageIcon) photoLabel.getIcon();
-        if (photoIcon != null) {
+        if (photoFilePath != null) {
+            ImageIcon photoIcon = new ImageIcon(photoFilePath);
             ImageIcon scaledPhoto = new ImageIcon(photoIcon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
-            message += "\n\nPhoto:";
             JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE, scaledPhoto);
         } else {
             JOptionPane.showMessageDialog(this, message, "User Registration Successful", JOptionPane.INFORMATION_MESSAGE);
@@ -189,8 +192,9 @@ public class UserRegistration extends javax.swing.JFrame {
 
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
-            ImageIcon photoIcon = new ImageIcon(selectedFile.getPath());
-            photoLabel.setIcon(photoIcon);
+            photoFilePath = selectedFile.getAbsolutePath();
+            ((AbstractButton) SwingUtilities.getRoot((Component) fileChooser))
+                .setText("Uploaded: " + photoFilePath);
         }
     }//GEN-LAST:event_uploadBtnActionPerformed
 
